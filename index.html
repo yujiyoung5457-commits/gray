@@ -91,7 +91,7 @@
     <div id="wrap">
         
         <div id="gameBox">
-            <canvas width="800" height="500"></canvas>
+            <canvas width="800" height="550"></canvas>
             <button id="re">Restart</button>
             <div id="btnBox">
                 <h3>GAME MODE</h3>
@@ -140,8 +140,6 @@
         // 
         ball.X=canvas.width/2
         ball.Y=canvas.height-53
-        ball.speedX=2
-        ball.speedY=-2
 
         // 
         bar.X=canvas.width/2-bar.W/2
@@ -218,11 +216,6 @@
         re.style.display="block"
     }
 
-    re.addEventListener("click", function(){
-        cancelAnimationFrame(aniID)
-        startGame()
-    })
-
     //공 움직이기
     function move(){
         ball.X+=ball.speedX
@@ -281,140 +274,187 @@
     // startGame()
 
 
-    easy.addEventListener("click",function(){
+    // easy.addEventListener("click",function(){
         
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        ctx.beginPath()
-        ctx.fillStyle="gray"
-        bar.W=200
-        ctx.fillRect(bar.X, bar.Y, bar.W, bar.H)
-        ctx.fill()
+    //     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    //     ctx.beginPath()
+    //     ctx.fillStyle="gray"
+    //     bar.W=200
+    //     ctx.fillRect(bar.X, bar.Y, bar.W, bar.H)
+    //     ctx.fill()
 
-         function startGame1(){
-        // 
-        ball.X=canvas.width/2
-        ball.Y=canvas.height-53
-        ball.speedX=3
-        ball.speedY=-3
+    //      function startGame1(){
+    //     // 
+    //     ball.X=canvas.width/2
+    //     ball.Y=canvas.height-53
+    //     ball.speedX=3
+    //     ball.speedY=-3
 
-        // 
-        bar.X=canvas.width/2-bar.W/2
-        brick={row:2, col:4, W:160, H:100, Gap:12}
-        // 
-        bricks=[]
+    //     // 
+    //     bar.X=canvas.width/2-bar.W/2
+    //     brick={row:2, col:4, W:160, H:100, Gap:12}
+    //     // 
+    //     bricks=[]
         
-        for(let row=0; row<brick.row; row++){
-            for(let col=0; col<brick.col; col++){
-                // 
-                bricks.push({
-                    x:60+col*(brick.W+brick.Gap),
-                    y:50+row*(brick.H+brick.Gap),
+    //     for(let row=0; row<brick.row; row++){
+    //         for(let col=0; col<brick.col; col++){
+    //             // 
+    //             bricks.push({
+    //                 x:60+col*(brick.W+brick.Gap),
+    //                 y:50+row*(brick.H+brick.Gap),
 
-                    // 
-                    show:true,
-                    color:`hsla(0, 0%, ${Math.random()*80}%)`
-                })
-            }
-        }
+    //                 // 
+    //                 show:true,
+    //                 color:`hsla(0, 0%, ${Math.random()*80}%)`
+    //             })
+    //         }
+    //     }
         
-        if(bricks.every(b => b.show === false)){
-            gameClear()
-        }
-        gameOver=false
-        re.style.display="none"
-        animate()
+    //     if(bricks.every(b => b.show === false)){
+    //         gameClear()
+    //     }
+    //     gameOver=false
+    //     re.style.display="none"
+    //     animate()
 
-    }
-    startGame1()
-    })
+    // }
+    // startGame1()
+    // })
 
 
-     normal.addEventListener("click",function(){
+    //  normal.addEventListener("click",function(){
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        ctx.beginPath()
-        ctx.fillStyle="gray"
-        bar.W=100
-        ctx.fillRect(bar.X, bar.Y, bar.W, bar.H)
-        ctx.fill()
+    //     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    //     ctx.beginPath()
+    //     ctx.fillStyle="gray"
+    //     bar.W=100
+    //     ctx.fillRect(bar.X, bar.Y, bar.W, bar.H)
+    //     ctx.fill()
 
-         function startGame(){
-        // 
-        ball.X=canvas.width/2
-        ball.Y=canvas.height-53
-        ball.speedX=5
-        ball.speedY=-5
+    //      function startGame(){
+    //     // 
+    //     ball.X=canvas.width/2
+    //     ball.Y=canvas.height-53
+    //     ball.speedX=5
+    //     ball.speedY=-5
 
-        // 
-        bar.X=canvas.width/2-bar.W/2
+    //     // 
+    //     bar.X=canvas.width/2-bar.W/2
 
-        // 
-         brick={row:4, col:6, W:100, H:30, Gap:12}
-        bricks=[]
-        for(let row=0; row<brick.row; row++){
-            for(let col=0; col<brick.col; col++){
-                // 
+    //     // 
+    //      brick={row:4, col:6, W:100, H:30, Gap:12}
+    //     bricks=[]
+    //     for(let row=0; row<brick.row; row++){
+    //         for(let col=0; col<brick.col; col++){
+    //             // 
                 
-                bricks.push({
-                    x:55+col*(brick.W+brick.Gap),
-                    y:50+row*(brick.H+brick.Gap),
+    //             bricks.push({
+    //                 x:55+col*(brick.W+brick.Gap),
+    //                 y:50+row*(brick.H+brick.Gap),
 
-                    // 
-                    show:true,
-                    color:`hsla(0, 0%, ${Math.random()*80}%)`
-                })
-            }
-        }
-        gameOver=false
-        re.style.display="none"
-        animate()
+    //                 // 
+    //                 show:true,
+    //                 color:`hsla(0, 0%, ${Math.random()*80}%)`
+    //             })
+    //         }
+    //     }
+    //     gameOver=false
+    //     re.style.display="none"
+    //     animate()
 
+    // }
+    // startGame()
+    // })
+
+
+    // hard.addEventListener("click",function(){
+    //     ctx.clearRect(0, 0, canvas.width, canvas.height)
+    //     ctx.beginPath()
+    //     ctx.fillStyle="gray"
+    //     bar.W=50
+    //     ctx.fillRect(bar.X, bar.Y, bar.W, bar.H)
+    //     ctx.fill()
+
+    //      function startGame(){
+    //     // 
+    //     ball.X=canvas.width/2
+    //     ball.Y=canvas.height-53
+    //     ball.speedX=8
+    //     ball.speedY=-8
+
+    //     // 
+    //     bar.X=canvas.width/2-bar.W/2
+
+    //     // 
+    //     brick={row:8, col:6, W:100, H:30, Gap:12}
+    //     bricks=[]
+    //     for(let row=0; row<brick.row; row++){
+    //         for(let col=0; col<brick.col; col++){
+    //             // 
+    //             bricks.push({
+    //                 x:55+col*(brick.W+brick.Gap),
+    //                 y:50+row*(brick.H+brick.Gap),
+
+    //                 // 
+    //                 show:true,
+    //                 color:`hsla(0, 0%, ${Math.random()*80}%)`
+    //             })
+    //         }
+    //     }
+    //     gameOver=false
+    //     re.style.display="none"
+    //     animate()
+
+    // }
+    // startGame()
+    // })
+
+    // -------------------------------------
+    let currentMode = null
+
+function startByMode(mode){
+    currentMode = mode
+
+    if(mode === "easy"){
+        bar.W = 200
+        ball.speedX = 3
+        ball.speedY = -3
+        brick = {row:2, col:4, W:160, H:100, Gap:12}
     }
-    startGame()
-    })
 
-
-    hard.addEventListener("click",function(){
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        ctx.beginPath()
-        ctx.fillStyle="gray"
-        bar.W=50
-        ctx.fillRect(bar.X, bar.Y, bar.W, bar.H)
-        ctx.fill()
-
-         function startGame(){
-        // 
-        ball.X=canvas.width/2
-        ball.Y=canvas.height-53
-        ball.speedX=8
-        ball.speedY=-8
-
-        // 
-        bar.X=canvas.width/2-bar.W/2
-
-        // 
-        brick={row:8, col:6, W:100, H:30, Gap:12}
-        bricks=[]
-        for(let row=0; row<brick.row; row++){
-            for(let col=0; col<brick.col; col++){
-                // 
-                bricks.push({
-                    x:55+col*(brick.W+brick.Gap),
-                    y:50+row*(brick.H+brick.Gap),
-
-                    // 
-                    show:true,
-                    color:`hsla(0, 0%, ${Math.random()*80}%)`
-                })
-            }
-        }
-        gameOver=false
-        re.style.display="none"
-        animate()
-
+    if(mode === "normal"){
+        bar.W = 100
+        ball.speedX = 5
+        ball.speedY = -5
+        brick = {row:4, col:6, W:100, H:30, Gap:15}
     }
+
+    if(mode === "hard"){
+        bar.W = 60
+        ball.speedX = 8
+        ball.speedY = -8
+        brick = {row:6, col:6, W:100, H:30, Gap:15}
+    }
+
     startGame()
-    })
+}
+
+easy.addEventListener("click", function(){
+    startByMode("easy")
+})
+
+normal.addEventListener("click", function(){
+    startByMode("normal")
+})
+
+hard.addEventListener("click", function(){
+    startByMode("hard")
+})
+
+re.addEventListener("click", function(){
+    cancelAnimationFrame(aniID)
+    startByMode(currentMode)
+})
     
     
 
