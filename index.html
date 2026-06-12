@@ -349,10 +349,12 @@
         bar.X=canvas.width/2-bar.W/2
 
         // 
+         brick={row:4, col:6, W:100, H:30, Gap:12}
         bricks=[]
         for(let row=0; row<brick.row; row++){
             for(let col=0; col<brick.col; col++){
                 // 
+                
                 bricks.push({
                     x:55+col*(brick.W+brick.Gap),
                     y:50+row*(brick.H+brick.Gap),
@@ -391,6 +393,7 @@
         bar.X=canvas.width/2-bar.W/2
 
         // 
+        brick={row:8, col:6, W:100, H:30, Gap:12}
         bricks=[]
         for(let row=0; row<brick.row; row++){
             for(let col=0; col<brick.col; col++){
