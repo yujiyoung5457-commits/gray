@@ -83,11 +83,37 @@
            align-items: center;
            justify-content: center;
             /* border: 1px solid red; */
+        }.icon{
+            background-image: url(./img/1.png);
+            width: 100px;
+            height: 200px;
+            /* border: 1px solid red; */
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            z-index: 10;
+            position: absolute;
+            top: 30px;
+            left: 550px;
+        }
+        .back{
+             background-image: url(./img/2.png);
+              background-repeat: repeat;
+            background-position: center;
+             background-size: 200px;
+             opacity: 0.7;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            top: 0;
+           z-index: -2;
         }
     </style>
 </head>
 <body>
     <span>Gray Wall</span>
+    <div class="icon"></div>
     <div id="wrap">
         
         <div id="gameBox">
@@ -103,6 +129,7 @@
 
         
     </div>
+    <div class="back"></div>
 
  
 
